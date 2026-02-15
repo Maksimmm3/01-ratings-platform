@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ratings platform.
+
+The main goal of this project was to get hands-on experience with the latest features of Next.js and to practice building a type-safe application with TypeScript. This is a learning-focused repository to solidify core concepts.
 
 ## Getting Started
 
