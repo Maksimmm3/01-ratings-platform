@@ -1,5 +1,17 @@
 import Image from 'next/image';
 import styles from './page.module.css';
+import { Metadata } from 'next';
+
+// export const metadata: Metadata = {
+//   title: 'Home page',
+// };
+
+export async function generateMetadata(): Promise<Metadata> {
+  // actions
+  return {
+    title: 'Computed metadata',
+  };
+}
 
 export default function Home() {
   const a = 1;
