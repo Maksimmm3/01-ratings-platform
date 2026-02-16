@@ -3,6 +3,7 @@ import styles from './page.module.css';
 
 export default function Home() {
   const a = 1;
+  console.log(a);
 
   return (
     <div className={styles.page}>
