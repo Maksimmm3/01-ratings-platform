@@ -1,9 +1,19 @@
-/* body { */
-/* will expand as needed */
-/* } */
+html,
+body {
+  color: var(--black);
+}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+:root {
+  --black: #363c46;
+  --white: white;
+  --primary: #5053ee;
+  --red: #f56147;
+  --green: #189963;
+  --green-light: #b0eed4;
 }
