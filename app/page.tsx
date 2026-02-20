@@ -1,6 +1,7 @@
 import { Htag } from '@/components/Htag/Htag';
-import styles from './page.module.css';
+// import styles from './page.module.css';
 import { Metadata } from 'next';
+import { Button } from '@/components';
 
 export async function generateMetadata(): Promise<Metadata> {
   // actions
@@ -12,8 +13,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home() {
   return (
     <div>
-      <h1>Hello from Next.js</h1>
       <Htag tag="h1">Text</Htag>
+      <Button appearance="primary" arrow="right">
+        Button
+      </Button>
+      <Button appearance="ghost" arrow="down">
+        Button
+      </Button>
     </div>
   );
 }
