@@ -1,16 +1,24 @@
-import { Htag } from '@/components/Htag/Htag';
-// import styles from './page.module.css';
-import { Metadata } from 'next';
-import { Button } from '@/components';
+'use client';
+// TODO: While the component uses state, it's marked with "use client".
+// Remove "use client" directive when useState is removed,
+// and uncomment the metadata import and metadata generation function.
 
-export async function generateMetadata(): Promise<Metadata> {
-  // actions
-  return {
-    title: 'Computed metadata',
-  };
-}
+// import styles from './page.module.css';
+// import { Metadata } from 'next';
+import { Htag, Button, Paragraph, Tag, Rating } from '@/components';
+
+import { useState } from 'react';
+
+// export async function generateMetadata(): Promise<Metadata> {
+//   // actions
+//   return {
+//     title: 'Computed metadata',
+//   };
+// }
 
 export default function Home() {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <div>
       <Htag tag="h1">Text</Htag>
@@ -20,6 +28,24 @@ export default function Home() {
       <Button appearance="ghost" arrow="down">
         Button
       </Button>
+      <Paragraph size="s">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ratione
+      </Paragraph>
+      <Paragraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae rem
+      </Paragraph>
+      <Paragraph size="l">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis totam
+      </Paragraph>
+      <Tag size="s">Ghost</Tag>
+      <Tag size="m" color="red">
+        Red
+      </Tag>
+      <Tag size="s" color="green">
+        Green
+      </Tag>
+      <Tag color="primary">Primary</Tag>
+      <Rating rating={rating} isEditable setRating={setRating} />
     </div>
   );
 }
