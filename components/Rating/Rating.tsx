@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactElement, useState, useEffect, KeyboardEvent } from 'react';
+import { useState, KeyboardEvent } from 'react';
 import cn from 'classnames';
 import styles from './Rating.module.css';
 import { RatingProps } from './Rating.props';
@@ -12,13 +12,37 @@ export const Rating = ({
   setRating,
   ...props
 }: RatingProps) => {
-  const [ratingArray, setRatingArray] = useState<ReactElement[]>([]);
+  const [hoverRating, setHoverRating] = useState(0);
 
-  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
-    if (e.code !== 'Space' || !setRating) {
+  const constructRating = (currentRating: number) => {
+    return new Array(5).fill('').map((_: string, i: number) => {
+      return (
+        <span
+          key={i}
+          className={cn(styles.star, {
+            [styles.filled]: i < currentRating,
+            [styles.editable]: isEditable,
+          })}
+          onMouseEnter={() => changeDisplay(i + 1)}
+          onMouseLeave={() => changeDisplay(0)}
+          onClick={() => onClick(i + 1)}
+        >
+          <StarIcon
+            tabIndex={isEditable ? 0 : -1}
+            onKeyDown={(e: KeyboardEvent<SVGElement>) =>
+              isEditable && handleSpace(i + 1, e)
+            }
+          />
+        </span>
+      );
+    });
+  };
+
+  const changeDisplay = (i: number) => {
+    if (!isEditable) {
       return;
     }
-    setRating(i);
+    setHoverRating(i);
   };
 
   const onClick = (i: number) => {
@@ -28,43 +52,14 @@ export const Rating = ({
     setRating(i);
   };
 
-  const constructRating = (currentRating: number) => {
-    const updatedArray = new Array(5)
-      .fill('')
-      .map((_: ReactElement, i: number) => {
-        return (
-          <span
-            key={i}
-            className={cn(styles.star, {
-              [styles.filled]: i < currentRating,
-              [styles.editable]: isEditable,
-            })}
-            onMouseEnter={() => changeDisplay(i + 1)}
-            onMouseLeave={() => changeDisplay(rating)}
-            onClick={() => onClick(i + 1)}
-          >
-            <StarIcon
-              tabIndex={isEditable ? 0 : -1}
-              onKeyDown={(e: KeyboardEvent<SVGElement>) =>
-                isEditable && handleSpace(i + 1, e)
-              }
-            />
-          </span>
-        );
-      });
-    setRatingArray(updatedArray);
-  };
-
-  const changeDisplay = (i: number) => {
-    if (!isEditable) {
+  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
+    if (e.code !== 'Space' || !setRating) {
       return;
     }
-    constructRating(i);
+    setRating(i);
   };
 
-  useEffect(() => {
-    constructRating(rating);
-  }, [rating]);
+  const currentRating = hoverRating || rating;
 
-  return <div {...props}>{ratingArray}</div>;
+  return <div {...props}>{constructRating(currentRating)}</div>;
 };
