@@ -5,9 +5,9 @@
 
 // import styles from './page.module.css';
 // import { Metadata } from 'next';
-import { Htag, Button, Paragraph, Tag, Rating } from '@/components';
-
+import Link from 'next/link';
 import { useState } from 'react';
+import { Htag, Button, Paragraph, Tag, Rating } from '@/components';
 
 // export async function generateMetadata(): Promise<Metadata> {
 //   // actions
@@ -46,6 +46,7 @@ export default function Home() {
       </Tag>
       <Tag color="primary">Primary</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
+      <Link href="/about">About</Link>
     </div>
   );
 }
