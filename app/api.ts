@@ -1,12 +1,11 @@
 export const API = {
-  topPage: {
-    find: process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
-    byAlias: process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/byAlias/',
+  category: {
+    findAll: '/api/categories',
   },
-  product: {
-    find: process.env.NEXT_PUBLIC_DOMAIN + '/api/product/find',
+  course: {
+    findAll: '/api/courses',
   },
   review: {
-    createDemo: process.env.NEXT_PUBLIC_DOMAIN + '/api/review/create-demo',
+    findAll: '/api/reviews',
   },
 };
