@@ -1,9 +1,4 @@
-import { API } from './api';
-
-async function getCategories() {
-  const res = await fetch(`http://localhost:3000${API.category.findAll}`);
-  return res.json();
-}
+import { getCategories } from './api/categories';
 
 export default async function Home() {
   const categories = await getCategories();
