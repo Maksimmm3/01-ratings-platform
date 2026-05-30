@@ -1,3 +1,4 @@
+export const revalidate = 3600;
 import { getCategories } from './api/categories';
 
 export default async function Home() {
