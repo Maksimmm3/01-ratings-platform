@@ -5,6 +5,16 @@ interface Props {
   params: Promise<{ alias: string }>;
 }
 
+export async function generateStaticParams() {
+  const courses = await prisma.course.findMany({
+    select: { alias: true },
+  });
+
+  return courses.map((course) => ({
+    alias: course.alias,
+  }));
+}
+
 export default async function CoursePage({ params }: Props) {
   const { alias } = await params;
 
