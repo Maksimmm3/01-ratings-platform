@@ -1,16 +1,10 @@
 export const revalidate = 3600;
-import { getCategories } from './api/categories';
 
 export default async function Home() {
-  const categories = await getCategories();
 
   return (
     <main>
       Home page
-      <div>
-        <div>{JSON.stringify(categories)}</div>
-        <div>{categories.length}</div>
-      </div>
     </main>
   );
 }
