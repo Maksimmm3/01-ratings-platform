@@ -12,6 +12,7 @@ body {
 :root {
   --black: #363c46;
   --gray-light: #dfdddd;
+  --gray-dark: #787d85;
   --white: white;
   --primary: #5053ee;
   --primary-hover: #3739cc;

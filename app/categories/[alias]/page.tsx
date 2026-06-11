@@ -18,6 +18,7 @@ export async function generateStaticParams() {
 }
 
 export default async function CategoryPage({ params }: Props) {
+  // await new Promise((resolve) => setTimeout(resolve, 2000)); // simulate slow connection
   const { alias } = await params;
 
   const category = await prisma.category.findUnique({
