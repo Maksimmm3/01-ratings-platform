@@ -21,6 +21,11 @@ export default async function CategoryPage({ params }: Props) {
   // await new Promise((resolve) => setTimeout(resolve, 2000)); // simulate slow connection
   const { alias } = await params;
 
+  // Test error.tsx - remove after testing
+  if (process.env.NODE_ENV === 'development') {
+    throw new Error('Test error: Database connection failed');
+  }
+
   const category = await prisma.category.findUnique({
     where: { alias },
     include: {

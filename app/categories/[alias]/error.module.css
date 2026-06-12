@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.message {
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.button {
+  padding: 8px 16px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--primary-hover);
+}
