@@ -9,3 +9,4 @@ export * from './Sidebar/Sidebar';
 export * from './Footer/Footer';
 export * from './Menu/Menu';
 export * from './CourseCard/CourseCard';
+export * from './SearchInput/SearchInput';

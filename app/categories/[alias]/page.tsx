@@ -22,9 +22,9 @@ export default async function CategoryPage({ params }: Props) {
   const { alias } = await params;
 
   // Test error.tsx - remove after testing
-  if (process.env.NODE_ENV === 'development') {
-    throw new Error('Test error: Database connection failed');
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   throw new Error('Test error: Database connection failed');
+  // }
 
   const category = await prisma.category.findUnique({
     where: { alias },
