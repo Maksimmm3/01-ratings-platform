@@ -26,6 +26,13 @@ export const Menu = () => {
             </li>
           );
         })}
+        <li
+          className={cn(styles.item, {
+            [styles.active]: pathname === '/courses',
+          })}
+        >
+          <Link href="/courses">All courses</Link>
+        </li>
       </ul>
     </div>
   );
