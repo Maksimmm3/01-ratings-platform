@@ -1,0 +1,19 @@
+.cardTitle {
+  width: 60%;
+  height: 24px;
+  background: var(--gray-light);
+  margin-bottom: 8px;
+}
+
+.cardPrice {
+  width: 30%;
+  height: 16px;
+  background: var(--gray-light);
+  margin-bottom: 8px;
+}
+
+.cardDescription {
+  width: 80%;
+  height: 16px;
+  background: var(--gray-light);
+}

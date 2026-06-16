@@ -12,7 +12,7 @@ export default function CategoryError({ error, reset }: CategoryErrorProps) {
     <ErrorFallback
       error={error}
       reset={reset}
-      message="Failed to load category"
+      message="Failed to load search results"
     />
   );
 }

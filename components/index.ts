@@ -10,3 +10,5 @@ export * from './Footer/Footer';
 export * from './Menu/Menu';
 export * from './CourseCard/CourseCard';
 export * from './SearchInput/SearchInput';
+export * from './Skeleton/Skeleton';
+export * from './ErrorFallback/ErrorFallback';
