@@ -1,7 +1,7 @@
 export const revalidate = 3600;
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
-import { CourseCard } from '@/components';
+import { CourseCard, Htag, Tag } from '@/components';
 
 interface Props {
   params: Promise<{ alias: string }>;
@@ -43,8 +43,10 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <main>
-      <h1>{category.name}</h1>
-      <p>Courses: {category.courses.length}</p>
+      <Htag tag="h1">{category.name}</Htag>
+      <Tag color="grey" size="m">
+        {category.courses.length}
+      </Tag>
 
       {category.courses.map((course) => (
         <CourseCard key={course.id} course={course} />

@@ -18,9 +18,9 @@ export async function generateStaticParams() {
 
 export default async function CoursePage({ params }: Props) {
   // remove after testing
-  if (process.env.NODE_ENV === 'development') {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   await new Promise((resolve) => setTimeout(resolve, 2000));
+  // }
 
   const { alias } = await params;
 
