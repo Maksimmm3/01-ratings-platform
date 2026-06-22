@@ -1,4 +1,5 @@
 import { CourseCardProps } from './Course.props';
+import { price } from '@/helpers/price';
 
 export const CourseCard = ({ course }: CourseCardProps) => {
   return (
@@ -11,7 +12,7 @@ export const CourseCard = ({ course }: CourseCardProps) => {
       }}
     >
       <h2>{course.title}</h2>
-      <p>Price: {course.price} $</p>
+      <p>Price: {price(course.price)}</p>
       <p>{course.description}</p>
 
       {course.reviews.length > 0 && (
