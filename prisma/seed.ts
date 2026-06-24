@@ -2812,7 +2812,7 @@ async function main() {
   // timeSeriesAnalysis and azureAdmin intentionally have no reviews
 
   console.log('Seed completed successfully!');
-  console.log('Created: 7 categories, 63 courses, ~300 reviews');
+  console.log('Created: 7 categories, 59 courses, ~300 reviews');
 }
 
 main()

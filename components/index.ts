@@ -12,3 +12,4 @@ export * from './CourseCard/CourseCard';
 export * from './SearchInput/SearchInput';
 export * from './Skeleton/Skeleton';
 export * from './ErrorFallback/ErrorFallback';
+export * from './Sort/Sort';

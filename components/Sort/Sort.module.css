@@ -1,0 +1,37 @@
+.sort {
+  display: flex;
+  gap: 16px;
+}
+
+.sort span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: var(--gray-dark);
+  font-size: 14px;
+}
+
+.sortIcon {
+  display: none;
+  font-size: 18px;
+}
+
+.sort .active {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.active .sortIcon {
+  display: inline-flex;
+}
+
+.direction {
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.sort .active .sortIcon,
+.sort .active .direction {
+  color: var(--primary);
+}
