@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { CourseCardProps } from './Course.props';
 import { price } from '@/helpers/price';
 
@@ -22,8 +23,12 @@ export const CourseCard = ({ course }: CourseCardProps) => {
         </div>
       )}
 
-      <button>Details</button>
-      <button>Reviews</button>
+      <Link href={`/courses/${course.alias}`}>
+        <button>Details</button>
+      </Link>
+      <Link href={`/courses/${course.alias}#reviews`}>
+        <button>Reviews</button>
+      </Link>
     </div>
   );
 };

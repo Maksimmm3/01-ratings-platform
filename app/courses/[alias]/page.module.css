@@ -1,0 +1,29 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.review {
+  border-bottom: 1px solid var(--gray-light);
+  padding: 16px 0;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.reviewName {
+  font-weight: 500;
+}
+
+.reviewText {
+  color: var(--gray-dark);
+}

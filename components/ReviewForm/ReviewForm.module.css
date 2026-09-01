@@ -1,0 +1,53 @@
+.form {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.ratingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.ratingLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.ratingError {
+  font-size: 12px;
+  color: var(--red);
+}
+
+.submitButton {
+  padding: 12px 24px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background: var(--primary-hover);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

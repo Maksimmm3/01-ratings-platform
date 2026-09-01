@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.error {
+  border-color: var(--red);
+}
+
+.errorMessage {
+  font-size: 12px;
+  color: var(--red);
+}
