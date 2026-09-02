@@ -4,6 +4,60 @@
   padding: 24px;
 }
 
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-dark);
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.ratingLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.ratingValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.reviewCount {
+  font-size: 14px;
+  color: var(--gray-dark);
+}
+
+.reviewsTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-light);
+}
+
 .review {
   border-bottom: 1px solid var(--gray-light);
   padding: 16px 0;
@@ -22,8 +76,16 @@
 
 .reviewName {
   font-weight: 500;
+  color: var(--black);
 }
 
 .reviewText {
   color: var(--gray-dark);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.noReviews {
+  color: var(--gray-dark);
+  font-style: italic;
 }

@@ -2,6 +2,7 @@ export const revalidate = 3600;
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import { ReviewForm, Rating } from '@/components';
+import styles from './page.module.css';
 
 interface Props {
   params: Promise<{ alias: string }>;
@@ -38,32 +39,36 @@ export default async function CoursePage({ params }: Props) {
       : 0;
 
   return (
-    <div>
-      <h1>{course.title}</h1>
-      <p>{course.description}</p>
-      <p>Price: {course.price} ₽</p>
-      <div>
-        Rating: <Rating rating={Math.round(averageRating)} /> (
-        {course.reviews.length} reviews)
+    <div className={styles.container}>
+      <h1 className={styles.title}>{course.title}</h1>
+      <p className={styles.description}>{course.description}</p>
+      <p className={styles.price}>Price: {course.price} $</p>
+
+      <div className={styles.ratingWrapper}>
+        <span className={styles.ratingLabel}>Rating:</span>
+        <Rating rating={Math.round(averageRating)} />
+        <span className={styles.ratingValue}>{averageRating.toFixed(1)}</span>
+        <span className={styles.reviewCount}>
+          ({course.reviews.length} reviews)
+        </span>
       </div>
 
-      <h2 id="reviews">Reviews ({course.reviews.length})</h2>
+      <h2 id="reviews" className={styles.reviewsTitle}>
+        Reviews ({course.reviews.length})
+      </h2>
+
       {course.reviews.length > 0 ? (
         course.reviews.map((review) => (
-          <div
-            key={review.id}
-            style={{
-              border: '1px solid #eee',
-              padding: '12px',
-              marginBottom: '8px',
-            }}
-          >
-            <strong>{review.name}</strong> — <Rating rating={review.rating} />
-            <p>{review.text}</p>
+          <div key={review.id} className={styles.review}>
+            <div className={styles.reviewHeader}>
+              <strong className={styles.reviewName}>{review.name}</strong>
+              <Rating rating={review.rating} />
+            </div>
+            <p className={styles.reviewText}>{review.text}</p>
           </div>
         ))
       ) : (
-        <p>No reviews yet. Be the first!</p>
+        <p className={styles.noReviews}>No reviews yet. Be the first!</p>
       )}
 
       <ReviewForm courseId={course.id} />
