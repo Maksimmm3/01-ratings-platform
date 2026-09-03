@@ -1,11 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Input, Textarea, Rating } from '@/components';
 import styles from './ReviewForm.module.css';
 import { ReviewFormProps } from './ReviewForm.props';
 
 export const ReviewForm = ({ courseId }: ReviewFormProps) => {
+  const router = useRouter();
+
   const [name, setName] = useState('');
   const [text, setText] = useState('');
   const [rating, setRating] = useState(0);
@@ -65,7 +68,7 @@ export const ReviewForm = ({ courseId }: ReviewFormProps) => {
       setRating(0);
       setErrors({});
 
-      window.location.reload();
+      router.refresh();
     } catch (error) {
       console.error('Error submitting review:', error);
       setErrors({ text: 'Something went wrong. Please try again.' });
