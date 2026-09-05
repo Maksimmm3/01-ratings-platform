@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Input, Textarea, Rating } from '@/components';
+import { Input, Textarea, Rating, Button } from '@/components';
 import styles from './ReviewForm.module.css';
 import { ReviewFormProps } from './ReviewForm.props';
 
@@ -105,13 +105,9 @@ export const ReviewForm = ({ courseId }: ReviewFormProps) => {
         )}
       </div>
 
-      <button
-        type="submit"
-        className={styles.submitButton}
-        disabled={isSubmitting}
-      >
+      <Button appearance="primary" type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit review'}
-      </button>
+      </Button>
     </form>
   );
 };

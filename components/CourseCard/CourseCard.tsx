@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { CourseCardProps } from './Course.props';
 import { price } from '@/helpers/price';
+import { Button } from '@/components';
 import styles from './CourseCard.module.css';
 
 export const CourseCard = ({ course }: CourseCardProps) => {
@@ -19,10 +20,10 @@ export const CourseCard = ({ course }: CourseCardProps) => {
 
       <div className={styles.actions}>
         <Link href={`/courses/${course.alias}`}>
-          <button className={styles.button}>Details</button>
+          <Button appearance="ghost">Details</Button>
         </Link>
         <Link href={`/courses/${course.alias}#reviews`}>
-          <button className={styles.button}>Reviews</button>
+          <Button appearance="ghost">Reviews</Button>
         </Link>
       </div>
     </div>

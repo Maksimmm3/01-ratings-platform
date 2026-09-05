@@ -2,6 +2,8 @@
 
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { Button } from '@/components';
+import styles from './SearchInput.module.css';
 
 export const SearchInput = () => {
   const searchParams = useSearchParams();
@@ -22,16 +24,22 @@ export const SearchInput = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <input
         type="text"
+        placeholder="Search courses..."
         onChange={handleSearch}
         value={searchString}
         onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
       />
-      <button type="submit" onClick={handleSubmit}>
+      <Button
+        appearance="primary"
+        type="submit"
+        onClick={handleSubmit}
+        className={styles.searchButton}
+      >
         Search
-      </button>
+      </Button>
     </div>
   );
 };

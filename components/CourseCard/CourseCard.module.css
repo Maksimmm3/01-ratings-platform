@@ -45,22 +45,3 @@
   flex-wrap: wrap;
   margin-top: 4px;
 }
-
-.button {
-  padding: 8px 20px;
-  border: 1px solid var(--primary);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition:
-    background-color 0.2s,
-    color 0.2s;
-}
-
-.button:hover {
-  background: var(--primary);
-  color: var(--white);
-}
