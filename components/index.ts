@@ -16,3 +16,4 @@ export * from './Sort/Sort';
 export * from './Input/Input';
 export * from './Textarea/Textarea';
 export * from './ReviewForm/ReviewForm';
+export * from './Logo/Logo';

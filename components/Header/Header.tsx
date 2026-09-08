@@ -1,13 +1,16 @@
 import cn from 'classnames';
+import Link from 'next/link';
 import { Suspense } from 'react';
+import { Logo, SearchInput } from '@/components';
 import styles from './Header.module.css';
 import { HeaderProps } from './Header.props';
-import { SearchInput } from '@/components';
 
 export const Header = ({ className, ...props }: HeaderProps) => {
   return (
-    <div className={cn(className, styles.header)} {...props}>
-      <div>Logo</div>
+    <div className={cn(styles.header, className)} {...props}>
+      <Link href="/" className={styles.logoLink}>
+        <Logo />
+      </Link>
       <Suspense fallback={<div>Loading search...</div>}>
         <SearchInput />
       </Suspense>
