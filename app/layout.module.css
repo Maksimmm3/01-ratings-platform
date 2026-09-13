@@ -36,20 +36,28 @@ min-height: 100vh;
   grid-area: footer;
 }
 
-@media (width <= 765px) {
+@media (768px <= width <= 1023px) {
   .wrapper {
-    grid-template-columns: minmax(320px, 1fr);
+    grid-template:
+      'header header' auto
+      'sidebar body' 1fr
+      'footer footer' auto
+      / 200px 1fr;
+    gap: 0 16px;
+  }
+}
+
+@media (width < 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
     grid-template-areas:
       'header'
       'body'
       'footer';
+    gap: 0;
   }
 
   .sidebar {
     display: none;
-  }
-
-  .header {
-    display: block;
   }
 }
