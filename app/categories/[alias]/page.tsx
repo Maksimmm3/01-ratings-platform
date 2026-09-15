@@ -70,9 +70,11 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         </div>
       </div>
 
-      {sortedCourses.map((course) => (
-        <CourseCard key={course.id} course={course} />
-      ))}
+      <div className={styles.coursesGrid}>
+        {sortedCourses.map((course) => (
+          <CourseCard key={course.id} course={course} />
+        ))}
+      </div>
     </main>
   );
 }
