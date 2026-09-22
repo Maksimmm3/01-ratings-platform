@@ -2,7 +2,7 @@ import { Noto_Sans } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
 import styles from './layout.module.css';
-import { Header, Sidebar, Footer, ScrollToTop } from '@/components';
+import { Header, Sidebar, Footer, ScrollToTop, MobileMenu } from '@/components';
 import { AppContextProvider } from '@/context/app.context';
 import { prisma } from '@/lib/prisma';
 
@@ -28,6 +28,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={notoSans.className}>
         <AppContextProvider categories={categories}>
+          <MobileMenu />
           <div className={styles.wrapper}>
             <Header className={styles.header} />
             <Sidebar className={styles.sidebar} />

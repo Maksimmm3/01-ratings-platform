@@ -18,3 +18,4 @@ export * from './Textarea/Textarea';
 export * from './ReviewForm/ReviewForm';
 export * from './Logo/Logo';
 export * from './ScrollToTop/ScrollToTop';
+export * from './MobileMenu/MobileMenu';
