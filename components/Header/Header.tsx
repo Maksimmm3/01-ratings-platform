@@ -10,7 +10,7 @@ import styles from './Header.module.css';
 import { HeaderProps } from './Header.props';
 
 export const Header = ({ className, ...props }: HeaderProps) => {
-  const { setIsMobileMenuOpen } = useAppContext();
+  const { isMobileMenuOpen, setIsMobileMenuOpen } = useAppContext();
 
   return (
     <div className={cn(styles.header, className)} {...props}>
@@ -19,10 +19,11 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           className={styles.burger}
           onClick={() => setIsMobileMenuOpen(true)}
           aria-label="Open menu"
+          aria-expanded={isMobileMenuOpen}
         >
           <MdMenu />
         </button>
-        <Link href="/" className={styles.logoLink}>
+        <Link href="/" className={styles.logoLink} aria-label="Go to homepage">
           <Logo />
         </Link>
       </div>

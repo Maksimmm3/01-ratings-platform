@@ -37,6 +37,7 @@ export const SearchInput = () => {
         type="submit"
         onClick={handleSubmit}
         className={styles.searchButton}
+        aria-label="Search courses"
       >
         Search
       </Button>
