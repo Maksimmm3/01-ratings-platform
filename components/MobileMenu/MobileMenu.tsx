@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect } from 'react';
 import cn from 'classnames';
 import { MdClose } from 'react-icons/md';
 import { useAppContext } from '@/context/app.context';
@@ -8,6 +9,19 @@ import styles from './MobileMenu.module.css';
 
 export const MobileMenu = () => {
   const { categories, isMobileMenuOpen, setIsMobileMenuOpen } = useAppContext();
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isMobileMenuOpen, setIsMobileMenuOpen]);
 
   const closeMenu = () => setIsMobileMenuOpen(false);
 
