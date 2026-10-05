@@ -48,7 +48,7 @@ export const MobileMenu = () => {
             onClick={closeMenu}
             aria-label="Close menu"
           >
-            <MdClose />
+            <MdClose aria-hidden="true" />
           </button>
         </div>
 

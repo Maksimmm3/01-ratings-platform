@@ -61,7 +61,7 @@ export const Rating = ({
           onMouseLeave={() => changeDisplay(0)}
           onClick={() => onClick(starValue)}
         >
-          <StarIcon />
+          <StarIcon aria-hidden="true" />
         </span>
       );
     });

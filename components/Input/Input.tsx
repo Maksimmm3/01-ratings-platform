@@ -7,6 +7,7 @@ import { InputProps } from './Input.props';
 
 export const Input = ({ label, error, className, ...props }: InputProps) => {
   const id = useId();
+  const errorId = `${id}-error`;
 
   return (
     <div className={cn(styles.wrapper, className)}>
@@ -18,6 +19,8 @@ export const Input = ({ label, error, className, ...props }: InputProps) => {
       <input
         id={id}
         className={cn(styles.input, { [styles.error]: error })}
+        aria-describedby={error ? errorId : undefined}
+        aria-invalid={!!error}
         {...props}
       />
       {error && <span className={styles.errorMessage}>{error}</span>}

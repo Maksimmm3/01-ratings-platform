@@ -21,7 +21,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           aria-label="Open menu"
           aria-expanded={isMobileMenuOpen}
         >
-          <MdMenu />
+          <MdMenu aria-hidden="true" />
         </button>
         <Link href="/" className={styles.logoLink} aria-label="Go to homepage">
           <Logo />

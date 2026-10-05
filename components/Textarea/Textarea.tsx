@@ -12,6 +12,7 @@ export const Textarea = ({
   ...props
 }: TextareaProps) => {
   const id = useId();
+  const errorId = `${id}-error`;
 
   return (
     <div className={cn(styles.wrapper, className)}>
@@ -23,6 +24,8 @@ export const Textarea = ({
       <textarea
         id={id}
         className={cn(styles.textarea, { [styles.error]: error })}
+        aria-describedby={error ? errorId : undefined}
+        aria-invalid={!!error}
         {...props}
       />
       {error && <span className={styles.errorMessage}>{error}</span>}

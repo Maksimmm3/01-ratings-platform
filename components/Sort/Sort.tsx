@@ -37,7 +37,7 @@ export const Sort = ({ sort, dir, className, ...props }: SortProps) => {
         className={cn({ [styles.active]: sort === 'rating' })}
         aria-pressed={sort === 'rating'}
       >
-        <MdSort className={styles.sortIcon} />
+        <MdSort className={styles.sortIcon} aria-hidden="true" />
         By rating
         {sort === 'rating' && (
           <span className={styles.direction}>
@@ -50,7 +50,7 @@ export const Sort = ({ sort, dir, className, ...props }: SortProps) => {
         className={cn({ [styles.active]: sort === 'price' })}
         aria-pressed={sort === 'price'}
       >
-        <MdSort className={styles.sortIcon} />
+        <MdSort className={styles.sortIcon} aria-hidden="true" />
         By price
         {sort === 'price' && (
           <span className={styles.direction}>
