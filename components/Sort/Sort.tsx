@@ -26,10 +26,16 @@ export const Sort = ({ sort, dir, className, ...props }: SortProps) => {
   };
 
   return (
-    <div className={cn(styles.sort, className)} {...props}>
-      <span
+    <div
+      className={cn(styles.sort, className)}
+      role="group"
+      aria-label="Sort courses"
+      {...props}
+    >
+      <button
         onClick={() => handleSort('rating')}
         className={cn({ [styles.active]: sort === 'rating' })}
+        aria-pressed={sort === 'rating'}
       >
         <MdSort className={styles.sortIcon} />
         By rating
@@ -38,10 +44,11 @@ export const Sort = ({ sort, dir, className, ...props }: SortProps) => {
             {dir === 'asc' ? <MdOutlineNorth /> : <MdOutlineSouth />}
           </span>
         )}
-      </span>
-      <span
+      </button>
+      <button
         onClick={() => handleSort('price')}
         className={cn({ [styles.active]: sort === 'price' })}
+        aria-pressed={sort === 'price'}
       >
         <MdSort className={styles.sortIcon} />
         By price
@@ -50,7 +57,7 @@ export const Sort = ({ sort, dir, className, ...props }: SortProps) => {
             {dir === 'asc' ? <MdOutlineNorth /> : <MdOutlineSouth />}
           </span>
         )}
-      </span>
+      </button>
     </div>
   );
 };
