@@ -39,7 +39,7 @@ export default async function CoursePage({ params }: Props) {
       : 0;
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <h1 className={styles.title}>{course.title}</h1>
       <p className={styles.description}>{course.description}</p>
       <p className={styles.price}>Price: {course.price} $</p>
@@ -72,6 +72,6 @@ export default async function CoursePage({ params }: Props) {
       )}
 
       <ReviewForm courseId={course.id} />
-    </div>
+    </main>
   );
 }

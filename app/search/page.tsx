@@ -31,7 +31,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     : [];
 
   return (
-    <div>
+    <main>
       <Suspense fallback={<div>Loading search...</div>}>
         <SearchInput />
       </Suspense>
@@ -43,6 +43,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       {courses.map((course) => (
         <CourseCard key={course.id} course={course} />
       ))}
-    </div>
+    </main>
   );
 }

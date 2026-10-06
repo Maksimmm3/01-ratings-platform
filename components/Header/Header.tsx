@@ -13,7 +13,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useAppContext();
 
   return (
-    <div className={cn(styles.header, className)} {...props}>
+    <header className={cn(styles.header, className)} {...props}>
       <div className={styles.left}>
         <button
           className={styles.burger}
@@ -30,6 +30,6 @@ export const Header = ({ className, ...props }: HeaderProps) => {
       <Suspense fallback={<div>Loading search...</div>}>
         <SearchInput />
       </Suspense>
-    </div>
+    </header>
   );
 };

@@ -9,7 +9,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
       <span>
         Rating Platform © 2023-{format(new Date(), 'yyyy')}. All rights reserved
       </span>
-      <nav>
+      <nav aria-label="Legal">
         <a href="#" target="_blank">
           User Agreement
         </a>

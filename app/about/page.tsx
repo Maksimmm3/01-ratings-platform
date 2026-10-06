@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Htag tag="h1">About</Htag>
       <Link href="/">Home</Link>
-    </>
+    </main>
   );
 }

@@ -11,7 +11,7 @@ export const Menu = () => {
   const pathname = usePathname();
 
   return (
-    <div className={styles.menu}>
+    <nav className={styles.menu} aria-label="Categories">
       <ul className={styles.list}>
         {categories.map((cat) => {
           const isActive = pathname === `/categories/${cat.alias}`;
@@ -34,6 +34,6 @@ export const Menu = () => {
           <Link href="/courses">All courses</Link>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };

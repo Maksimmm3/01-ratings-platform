@@ -5,8 +5,8 @@ import { Menu } from '@/components/Menu/Menu';
 
 export const Sidebar = ({ ...props }: SidebarProps) => {
   return (
-    <div {...props}>
+    <aside {...props}>
       <Menu />
-    </div>
+    </aside>
   );
 };
