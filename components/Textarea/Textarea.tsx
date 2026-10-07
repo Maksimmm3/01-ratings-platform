@@ -28,7 +28,11 @@ export const Textarea = ({
         aria-invalid={!!error}
         {...props}
       />
-      {error && <span className={styles.errorMessage}>{error}</span>}
+      {error && (
+        <span id={errorId} className={styles.errorMessage} role="alert">
+          {error}
+        </span>
+      )}
     </div>
   );
 };
