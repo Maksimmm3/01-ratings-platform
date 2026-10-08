@@ -46,3 +46,9 @@
     margin-bottom: 16px;
   }
 }
+
+.successMessage {
+  margin-top: 12px;
+  color: var(--green);
+  font-size: 14px;
+}

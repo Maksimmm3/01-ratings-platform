@@ -18,6 +18,7 @@ export const ReviewForm = ({ courseId }: ReviewFormProps) => {
     rating?: string;
   }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const validate = () => {
     const newErrors: { name?: string; text?: string; rating?: string } = {};
@@ -69,6 +70,8 @@ export const ReviewForm = ({ courseId }: ReviewFormProps) => {
       setErrors({});
 
       router.refresh();
+      setSuccessMessage('Review submitted successfully!');
+      setTimeout(() => setSuccessMessage(''), 5000);
     } catch (error) {
       console.error('Error submitting review:', error);
       setErrors({ text: 'Something went wrong. Please try again.' });
@@ -101,13 +104,21 @@ export const ReviewForm = ({ courseId }: ReviewFormProps) => {
         <span className={styles.ratingLabel}>Rating</span>
         <Rating isEditable rating={rating} setRating={setRating} />
         {errors.rating && (
-          <span className={styles.ratingError}>{errors.rating}</span>
+          <span className={styles.ratingError} role="alert">
+            {errors.rating}
+          </span>
         )}
       </div>
 
       <Button appearance="primary" type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit review'}
       </Button>
+
+      {successMessage && (
+        <p role="status" className={styles.successMessage}>
+          {successMessage}
+        </p>
+      )}
     </form>
   );
 };
