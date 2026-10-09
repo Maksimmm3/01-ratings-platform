@@ -22,7 +22,12 @@ export const Menu = () => {
                 [styles.active]: isActive,
               })}
             >
-              <Link href={`/categories/${cat.alias}`}>{cat.name}</Link>
+              <Link
+                href={`/categories/${cat.alias}`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {cat.name}
+              </Link>
             </li>
           );
         })}
@@ -31,7 +36,12 @@ export const Menu = () => {
             [styles.active]: pathname === '/courses',
           })}
         >
-          <Link href="/courses">All courses</Link>
+          <Link
+            href="/courses"
+            aria-current={pathname === '/courses' ? 'page' : undefined}
+          >
+            All courses
+          </Link>
         </li>
       </ul>
     </nav>
