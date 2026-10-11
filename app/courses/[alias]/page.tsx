@@ -8,6 +8,18 @@ interface Props {
   params: Promise<{ alias: string }>;
 }
 
+export async function generateMetadata({ params }: Props) {
+  const { alias } = await params;
+  const course = await prisma.course.findUnique({ where: { alias } });
+
+  if (!course) return { title: 'Course not found' };
+
+  return {
+    title: course.title,
+    description: course.description,
+  };
+}
+
 export async function generateStaticParams() {
   const courses = await prisma.course.findMany({
     select: { alias: true },

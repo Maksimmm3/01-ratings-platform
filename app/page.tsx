@@ -1,8 +1,14 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import styles from './page.module.css';
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: 'CourseHub - Find the best IT courses',
+  description: 'Browse courses from top instructors, read reviews',
+};
 
 export default async function HomePage() {
   const categories = await prisma.category.findMany({
