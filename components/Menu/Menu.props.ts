@@ -1,3 +1,3 @@
 import { ComponentProps } from 'react';
 
-export interface MenuProps extends ComponentProps<'nav'> {}
+export type MenuProps = ComponentProps<'nav'>;

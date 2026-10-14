@@ -1,5 +1,3 @@
-import { ComponentProps /* ReactNode */ } from 'react';
+import { ComponentProps } from 'react';
 
-export interface SidebarProps extends ComponentProps<'aside'> {
-  // children: ReactNode;
-}
+export type SidebarProps = ComponentProps<'aside'>;

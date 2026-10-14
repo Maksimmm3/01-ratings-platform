@@ -324,7 +324,7 @@ async function main() {
   });
 
   // No reviews intentionally
-  const timeSeriesAnalysis = await prisma.course.create({
+  /* const timeSeriesAnalysis = */ await prisma.course.create({
     data: {
       title: 'Time Series Analysis',
       alias: 'time-series-analysis',
@@ -696,7 +696,7 @@ async function main() {
   });
 
   // No reviews intentionally
-  const azureAdmin = await prisma.course.create({
+  /* const azureAdmin = */ await prisma.course.create({
     data: {
       title: 'Microsoft Azure Administrator',
       alias: 'azure-administrator',

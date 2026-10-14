@@ -1,38 +1,103 @@
-# Ratings platform.
+# Ratings Platform
 
-The main goal of this project was to get hands-on experience with the latest features of Next.js and to practice building a type-safe application with TypeScript. This is a learning-focused repository to solidify core concepts.
+A fullstack course catalog platform where users can browse IT courses by category, search, sort, and leave reviews.
 
-## Getting Started
+The main goal of this project was to get hands-on experience with the latest features of Next.js (App Router) and to practice building a type-safe, fullstack application with TypeScript, Prisma, and PostgreSQL.
 
-First, run the development server:
+## ✨ Features
+
+- 📚 Browse courses by category
+- 🔍 Search courses by title
+- 📊 Sort courses by rating and price (URL-based)
+- ⭐ Read and write reviews
+- 🎨 Responsive design (mobile-first)
+- ♿ Accessible UI (keyboard navigation, ARIA attributes, landmarks)
+- ⚡ ISR (Incremental Static Regeneration) with revalidation
+- 🚫 Custom 404 and error pages
+- 🔒 Server-side validation for review submission
+
+## 🛠 Tech Stack
+
+**Frontend:**
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- CSS Modules + classnames
+- react-icons
+
+**Backend:**
+
+- Next.js API Routes
+- Prisma ORM 7
+- PostgreSQL
+
+**Tools:**
+
+- ESLint
+- Stylelint
+- GitHub Actions (CI)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- PostgreSQL
+
+### Installation
+
+```bash
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+cd REPO_NAME
+npm install
+```
+
+### Environment Variables
+
+Create a `.env.local` file in the root:
+
+```
+DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
+```
+
+### Database Setup
+
+```bash
+npx prisma migrate dev
+npx prisma db seed
+```
+
+### Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/                — pages and API routes (App Router)
+components/         — reusable UI components
+context/            — React Context for global state
+helpers/            — utility functions
+lib/                — Prisma client
+prisma/             — schema, migrations, seed data
+```
 
-## Learn More
+## 🧪 Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` — start development server
+- `npm run build` — build for production
+- `npm run start` — start production server
+- `npm run lint` — run ESLint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+_(coming soon)_
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for learning and portfolio purposes.

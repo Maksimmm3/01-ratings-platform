@@ -1,5 +1,3 @@
-import { ComponentProps /* ReactNode */ } from 'react';
+import { ComponentProps } from 'react';
 
-export interface FooterProps extends ComponentProps<'footer'> {
-  // children: ReactNode;
-}
+export type FooterProps = ComponentProps<'footer'>;
