@@ -1,5 +1,7 @@
 # Ratings Platform
 
+![CI](https://github.com/Maksimmm3/01-ratings-platform/actions/workflows/ci.yml/badge.svg)
+
 A fullstack course catalog platform where users can browse IT courses by category, search, sort, and leave reviews.
 
 The main goal of this project was to get hands-on experience with the latest features of Next.js (App Router) and to practice building a type-safe, fullstack application with TypeScript, Prisma, and PostgreSQL.
