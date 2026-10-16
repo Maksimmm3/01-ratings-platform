@@ -98,7 +98,21 @@ prisma/             — schema, migrations, seed data
 
 ## 📸 Screenshots
 
-_(coming soon)_
+### Home page
+
+![Home page](./public/screenshots/home.png)
+
+### Category page
+
+![Category page](./public/screenshots/category.png)
+
+### Course page
+
+![Course page](./public/screenshots/course.png)
+
+### Reviews and review form
+
+![Reviews](./public/screenshots/course-reviews.png)
 
 ## 📄 License
 
